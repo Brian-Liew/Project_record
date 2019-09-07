@@ -233,5 +233,17 @@ public class MainActivity extends AppCompatActivity {
 
 有了这些部件之后我们需要有互动的功能，因此需要一些监听器来获取我们的信号源进行操作，例如点击，你要做出响应。
 
-在监听器中，我们比较常见的有几种类型，例如对于点击按钮的监听器，第一种是直接匿名内部类，就是对于某个部件直接直接进行setXXXlistener，然后重写它的相关函数，例如onClick函数；同样的你可以定义一个类似的外部类或者内部类来实现功能。
+在监听器中，我们比较常见的有几种类型，例如对于点击按钮的监听器，第一种是直接匿名内部类，就是对于某个部件直接直接进行setXXXlistener，然后重写它的相关函数，例如onClick函数；第二种就是同样的你可以定义一个类似的外部类或者内部类来实现功能。第三种就是直接将活动作为事件监听器，可以重写onClick函数。
+
+## 四、回调
+
+监听器是对于某个动作的监听之后进行操作，而回调类似的，是对某个事件组件自己的处理方法，可以这么理解，就是我们对于回调的使用就是对于组件类的重写，例如：
+
+> *①在该组件上触发屏幕事件: boolean* **onTouchEvent***(MotionEvent event);*
+> *②在该组件上按下某个按钮时: boolean* **onKeyDown***(int keyCode,KeyEvent event);*
+> *③松开组件上的某个按钮时: boolean* **onKeyUp***(int keyCode,KeyEvent event);*
+> *④长按组件某个按钮时: boolean* **onKeyLongPress***(int keyCode,KeyEvent event);*
+> *⑤键盘快捷键事件发生: boolean* **onKeyShortcut***(int keyCode,KeyEvent event);*
+> *⑥在组件上触发轨迹球屏事件: boolean* **onTrackballEvent***(MotionEvent event);*
+> **⑦当组件的焦点发生改变,和前面的6个不同,这个方法只能够在View中重写哦！ protected void* **onFocusChanged***(boolean gainFocus, int direction, Rect previously FocusedRect)*
 
